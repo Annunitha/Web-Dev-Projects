@@ -1,0 +1,45 @@
+name: Build project index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Projects/**"
+      - ".github/scripts/generate-index.mjs"
+      - ".github/workflows/index-projects.yml"
+  pull_request:
+    paths:
+      - "Projects/**"
+      - ".github/scripts/generate-index.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate projects.json
+        run: node .github/scripts/generate-index.mjs
+
+      - name: Commit updated index (main only)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          if [[ -n "$(git status --porcelain projects.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add projects.json
+            git commit -m "chore: rebuild projects.json"
+            git push
+          else
+            echo "No changes to projects.json"
+          fi

@@ -1,0 +1,34 @@
+name: Bug report
+description: Report a bug in the showcase page, an example project, or the workflow
+title: "[Bug] <short summary>"
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: A clear, concise description of the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to ...
+        2. Click on ...
+        3. See ...
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where did this happen?
+      description: Project folder name, "showcase page", or "workflow".
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and OS
+      placeholder: Chrome 130 on Windows 11

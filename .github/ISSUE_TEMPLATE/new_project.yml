@@ -1,0 +1,55 @@
+name: New Project
+description: Submit a new project to the Projects/ folder
+title: "[Project] <Your Project Name>"
+labels: ["new-project"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for submitting a project. Please fill out every field so a
+        maintainer can review your PR quickly. Read CONTRIBUTING.md first.
+  - type: input
+    id: name
+    attributes:
+      label: Project name
+      description: Title Case with real spaces. Example "To Do Web App".
+      placeholder: My Project Name
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: One-line description
+      description: Under 160 characters. Used on the showcase page.
+    validations:
+      required: true
+  - type: input
+    id: github
+    attributes:
+      label: Your GitHub username
+      placeholder: your-handle
+    validations:
+      required: true
+  - type: textarea
+    id: tags
+    attributes:
+      label: Tags
+      description: 1–6 comma-separated lowercase tags (no spaces).
+      placeholder: productivity, vanilla-js, localstorage
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-flight checks
+      options:
+        - label: I read CONTRIBUTING.md
+          required: true
+        - label: My folder is named in Title Case with spaces
+          required: true
+        - label: My folder contains README.md, project.json and index.html
+          required: true
+        - label: My project opens by double-clicking index.html
+          required: true
+        - label: My project has no console errors and no tracking scripts
+          required: true

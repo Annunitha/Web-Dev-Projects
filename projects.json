@@ -189,6 +189,25 @@
       "folder": "Projects/Password%20Generator",
       "thumbnail": "Projects/Password%20Generator/thumbnail.svg",
       "addedAt": "2026-06-03T13:04:53.826Z"
+    },
+    {
+      "slug": "QR Code Generator",
+      "title": "QR Code Generator",
+      "description": "A simple client-side utility that generates QR codes from text or local file content, with real-time rendering and downloadable PNG outputs.",
+      "author": {
+        "name": "Shruti Narsulwar",
+        "github": "Shrutiii01"
+      },
+      "tags": [
+        "utility",
+        "vanilla-js",
+        "canvas",
+        "qr"
+      ],
+      "entry": "Projects/QR%20Code%20Generator/index.html",
+      "folder": "Projects/QR%20Code%20Generator",
+      "thumbnail": "Projects/QR%20Code%20Generator/thumbnail.svg",
+      "addedAt": "2026-06-04T01:58:28.862Z"
     }
   ]
 }

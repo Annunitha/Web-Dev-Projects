@@ -1,0 +1,6 @@
+{
+  "name": "Typing Speed Tester",
+  "description": "Measure typing speed (WPM) and accuracy with a simple web app.",
+  "author": { "name": "Web Dev Projects", "github": "cu-sanjay" },
+  "language": ["HTML", "CSS", "JavaScript"]
+}

@@ -1,5 +1,5 @@
 {
-  "title": "Invoice & Billing Generator",
+  "title": "Invoice Billing Generator",
   "description": "A web app to create invoices, add line items, calculate totals, and export as PDF.",
   "entry": "index.html",
   "tags": [

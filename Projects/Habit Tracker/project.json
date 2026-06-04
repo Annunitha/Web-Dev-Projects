@@ -1,7 +1,7 @@
 {
   "title": "Habit Tracker",
   "description": "habit-bloom is a beautiful habit-tracking web app that help users build consistency",
-  "entry": "index.js",
+  "entry": "index.html",
   "tags": [
     "Responsive UI",
     "Local Storage",
@@ -15,4 +15,3 @@
     "github": "aman-bot06"
   }
 }
-

@@ -20,48 +20,78 @@ jobs:
             const prNum = context.payload.pull_request.number;
 
             const { data: files } = await github.rest.pulls.listFiles({ owner, repo, pull_number: prNum });
-
+            const totalFiles = files.length;
             const rootProjectJsonModified = files.some(f => f.filename === 'project.json');
+            const changedOutsideProjects = files.some(f => !f.filename.startsWith('Projects/'));
+            const tooManyFiles = totalFiles > 6;
 
-            let validFolderFound = false;
-            const directories = {};
+            const projectDirs = new Set();
+            const normalizedFiles = files.map(f => ({
+              ...f,
+              filenameLower: f.filename.toLowerCase(),
+              statusLower: f.status ? f.status.toLowerCase() : 'added'
+            }));
 
-            files.forEach(f => {
-              const parts = f.filename.split('/');
-              if (parts.length > 1) {
-                const dir = parts.slice(0, -1).join('/');
-                const file = parts[parts.length - 1].toLowerCase();
-                if (!directories[dir]) directories[dir] = [];
-                directories[dir].push(file);
-              }
-            });
-
-            for (const dir in directories) {
-              const dirFiles = directories[dir];
-              const hasReadme = dirFiles.some(f => f.includes('readme'));
-              const hasProjectJson = dirFiles.some(f => f === 'project.json');
-              if (hasReadme && hasProjectJson) {
-                validFolderFound = true;
-                break;
+            for (const f of normalizedFiles) {
+              if (f.filename.startsWith('Projects/')) {
+                const parts = f.filename.split('/');
+                if (parts.length >= 2) {
+                  projectDirs.add(parts.slice(0, 2).join('/'));
+                }
               }
             }
 
-            if (rootProjectJsonModified) {
+            if (rootProjectJsonModified || changedOutsideProjects) {
               await github.rest.issues.createComment({
                 owner,
                 repo,
                 issue_number: prNum,
-                body: 'PR failed checks: Modifications to the root `project.json` are not allowed. Please keep changes inside the new project folder only.'
+                body: 'PR failed checks: Changes must be limited to a single new project folder under `Projects/`. Do not modify the root `project.json` or files outside the new folder.'
               });
               return;
             }
 
-            if (!validFolderFound) {
+            if (tooManyFiles) {
               await github.rest.issues.createComment({
                 owner,
                 repo,
                 issue_number: prNum,
-                body: 'PR failed checks: Ensure your new folder contains both a `README.md` and a `project.json` file.'
+                body: 'PR failed checks: Please keep the total number of changed files at 6 or fewer for a single new project submission.'
+              });
+              return;
+            }
+
+            if (projectDirs.size !== 1) {
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: prNum,
+                body: 'PR failed checks: Ensure all changes are within one new project folder under `Projects/`.'
+              });
+              return;
+            }
+
+            const [projectDir] = [...projectDirs];
+            const hasReadme = normalizedFiles.some(f => f.filenameLower === `${projectDir.toLowerCase()}/readme.md`);
+            const hasProjectJson = normalizedFiles.some(f => f.filenameLower === `${projectDir.toLowerCase()}/project.json`);
+            const hasInvalidStatus = normalizedFiles.some(f => f.filenameLower.startsWith(`${projectDir.toLowerCase()}/`) && f.statusLower !== 'added');
+
+            if (!hasReadme || !hasProjectJson) {
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: prNum,
+                body: 'PR failed checks: The new project folder must include both `README.md` and `project.json`.'
+              });
+              return;
+            }
+
+            if (hasInvalidStatus) {
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: prNum,
+                body: 'PR failed checks: Existing files may not be modified. All changes should be new files inside the new project folder only.'
               });
               return;
             }
@@ -73,9 +103,9 @@ jobs:
               labels: ["NSoC'26", "NSoC'26 Accepted", 'level3']
             });
 
-            await github.rest.pulls.merge({
+            await github.rest.issues.createComment({
               owner,
               repo,
-              pull_number: prNum,
-              merge_method: 'squash'
+              issue_number: prNum,
+              body: 'Great work and contribution, will be merged soon as NSoc 2026 contribution.'
             });

@@ -1,18 +1,18 @@
 {
   "title": "Blog",
-  "version": "1.0.0",
-  "description": "My personal blog",
-  "entry": "index.html",
+  "description": "A clean React blog application built with Vite, Tailwind CSS, Redux Toolkit, React Router, React Hook Form, TinyMCE, and Appwrite. Features user authentication, post creation and management, image uploads, protected routes, and light/dark theme switching.",
   "author": {
-    "name": "Unknown",
-    "github": "no one"
+    "name": "Kumar Aashutosh Rana",
+    "github": "Aashutosh24"
   },
   "tags": [
-    "blog",
-    "web",
-    "js",
-    "html",
-    "css"
+    "react",
+    "vite",
+    "tailwindcss",
+    "redux-toolkit",
+    "appwrite",
+    "blog"
   ],
-  "license": "ISC"
-  }
+  "entry": "index.html",
+  "thumbnail": "thumbnail.svg"
+}

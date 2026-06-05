@@ -1,0 +1,18 @@
+{
+  "title": "Reaction Time Tester",
+  "description": "A web-based Reaction Time Tester game to measure user click speed after a visual signal.",
+  "author": {
+    "name": "Muskan Kumari",
+    "github": "Muskankr"
+  },
+  "tags": [
+    "html",
+    "css",
+    "javascript",
+    "responsive-design",
+    "youtube-clone",
+    "frontend"
+  ],
+  "entry": "index.html",
+  "thumbnail": "thumbnail.svg"
+}

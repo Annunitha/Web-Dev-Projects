@@ -3,13 +3,14 @@
 const grid = document.getElementById("grid");
 const tpl = document.getElementById("card-template");
 const search = document.getElementById("search");
+const shuffleBtn = document.getElementById("shuffle-btn");
 const tagbar = document.getElementById("tagbar");
 const empty = document.getElementById("empty");
 
 const statCount = document.getElementById("stat-count");
 const statUpdated = document.getElementById("stat-updated");
 
-const state = { all: [], activeTag: null, query: "" };
+const state = { all: [], filtered: [], activeTag: null, query: "" };
 
 const PALETTES = [
   ["#efe1cf", "#b86a2b"],
@@ -65,6 +66,8 @@ function render() {
     );
   });
 
+  state.filtered = list;
+
   grid.replaceChildren();
   if (!list.length) {
     empty.hidden = false;
@@ -74,6 +77,7 @@ function render() {
 
   for (const p of list) {
     const node = tpl.content.firstElementChild.cloneNode(true);
+    node.dataset.slug = p.slug;
     const media = node.querySelector(".card__media");
     const thumb = node.querySelector(".card__thumb");
     const title = node.querySelector(".card__title");
@@ -160,5 +164,24 @@ search.addEventListener("input", (e) => {
   state.query = e.target.value;
   render();
 });
+
+if (shuffleBtn) {
+  shuffleBtn.addEventListener("click", () => {
+    const activeProjects = state.filtered && state.filtered.length ? state.filtered : state.all;
+    if (!activeProjects.length) return;
+
+    const randomProject = activeProjects[Math.floor(Math.random() * activeProjects.length)];
+    const cardEl = grid.querySelector(`[data-slug="${randomProject.slug}"]`);
+    
+    if (cardEl) {
+      cardEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      
+      cardEl.classList.add("card--highlight");
+      setTimeout(() => {
+        cardEl.classList.remove("card--highlight");
+      }, 2000);
+    }
+  });
+}
 
 boot();

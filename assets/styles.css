@@ -188,6 +188,13 @@ main {
   justify-content: space-between;
   margin-bottom: 24px;
 }
+.toolbar-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  flex: 1 1 280px;
+  max-width: 580px;
+}
 .search {
   display: inline-flex;
   align-items: center;
@@ -196,7 +203,7 @@ main {
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   padding: 9px 16px;
-  flex: 1 1 280px;
+  flex: 1 1 200px;
   max-width: 380px;
   color: var(--muted);
 }
@@ -204,6 +211,34 @@ main {
 .search input {
   border: 0; outline: 0; background: transparent;
   font: inherit; color: var(--ink); width: 100%;
+}
+.shuffle-btn {
+  padding: 9px 18px;
+  flex: 0 1 auto;
+}
+.shuffle-btn svg {
+  display: block;
+}
+.card--highlight {
+  animation: card-flash 2.0s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes card-flash {
+  0% {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(184, 106, 43, 0.4), var(--shadow);
+    transform: translateY(-4px);
+  }
+  50% {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 6px rgba(184, 106, 43, 0.6), var(--shadow);
+    transform: translateY(-4px);
+  }
+  100% {
+    border-color: var(--line);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(0);
+  }
 }
 .tagbar { display: flex; flex-wrap: wrap; gap: 6px; }
 .tagbar button {

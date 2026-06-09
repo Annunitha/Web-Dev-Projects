@@ -658,11 +658,6 @@ document.addEventListener("click", (e) => {
 
 boot();
 
-document.addEventListener("mousemove", (e) => {
-  glowCursor.style.left = (e.clientX + window.scrollX) + "px";
-  glowCursor.style.top = (e.clientY + window.scrollY) + "px";
-});
-
 function renderProjects(projects) {
   const grid = document.getElementById("grid");
   grid.innerHTML = "";

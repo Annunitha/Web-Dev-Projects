@@ -11,8 +11,7 @@
     "graphics",
     "maze",
     "game-engine",
-    "vanilla-js",
-    "canvas"
+    "vanilla-js"
   ],
   "entry": "index.html",
   "thumbnail": "thumbnail.svg"

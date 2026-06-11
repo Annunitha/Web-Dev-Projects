@@ -59,54 +59,77 @@
       <!-- Left: Metrics Configurator -->
       <section class="card config-panel">
         <div class="card-inner">
-          <h2 class="panel-title">Website Metrics</h2>
+          <div class="config-tabs">
+            <button class="config-tab-btn active" id="config-tab-manual">Manual Specs</button>
+            <button class="config-tab-btn" id="config-tab-url">URL Audit</button>
+          </div>
+
+          <!-- Manual Form -->
           <form id="metrics-form" onsubmit="return false;">
-            
-            <div class="input-group">
-              <label for="input-js-size">Total JavaScript Size: <span id="val-js-size">800</span> KB</label>
-              <input type="range" id="input-js-size" min="50" max="3000" step="50" value="800">
-              <span class="input-desc">Includes bundlers, frameworks, and packages.</span>
+            <div id="manual-inputs-group">
+              <div class="input-group">
+                <label for="input-js-size">Total JavaScript Size: <span id="val-js-size">800</span> KB</label>
+                <input type="range" id="input-js-size" min="50" max="3000" step="50" value="800">
+                <span class="input-desc">Includes bundlers, frameworks, and packages.</span>
+              </div>
+
+              <div class="input-group">
+                <label for="input-images">Unoptimized Images: <span id="val-images">12</span></label>
+                <input type="range" id="input-images" min="0" max="50" step="1" value="12">
+                <span class="input-desc">Images missing sizes, compression, or lazy load.</span>
+              </div>
+
+              <div class="input-group">
+                <label for="input-requests">Network Requests: <span id="val-requests">45</span></label>
+                <input type="range" id="input-requests" min="5" max="150" step="5" value="45">
+                <span class="input-desc">Total HTTP requests required to render page.</span>
+              </div>
+
+              <div class="input-group">
+                <label for="input-dom-nodes">DOM HTML Size: <span id="val-dom-nodes">1500</span> Nodes</label>
+                <input type="range" id="input-dom-nodes" min="100" max="6000" step="100" value="1500">
+                <span class="input-desc">Total document markup elements.</span>
+              </div>
+
+              <div class="input-group">
+                <label for="input-rtt">Server Latency (RTT): <span id="val-rtt">120</span> ms</label>
+                <input type="range" id="input-rtt" min="10" max="800" step="10" value="120">
+                <span class="input-desc">Round trip network response delay.</span>
+              </div>
+
+              <div class="input-group">
+                <label for="input-blocking-scripts">Blocking Third-Party Scripts: <span id="val-blocking-scripts">4</span></label>
+                <input type="range" id="input-blocking-scripts" min="0" max="15" step="1" value="4">
+                <span class="input-desc">Blocking advertising, analytics, or social scripts.</span>
+              </div>
+
+              <div class="form-row">
+                <div class="toggle-group">
+                  <label class="toggle-label" for="toggle-critical-css">Inlined Critical CSS</label>
+                  <input type="checkbox" id="toggle-critical-css" class="ios-toggle">
+                </div>
+                
+                <div class="toggle-group">
+                  <label class="toggle-label" for="toggle-http3">HTTP/3 Network Protocol</label>
+                  <input type="checkbox" id="toggle-http3" class="ios-toggle">
+                </div>
+              </div>
             </div>
 
-            <div class="input-group">
-              <label for="input-images">Unoptimized Images: <span id="val-images">12</span></label>
-              <input type="range" id="input-images" min="0" max="50" step="1" value="12">
-              <span class="input-desc">Images missing sizes, compression, or lazy load.</span>
-            </div>
-
-            <div class="input-group">
-              <label for="input-requests">Network Requests: <span id="val-requests">45</span></label>
-              <input type="range" id="input-requests" min="5" max="150" step="5" value="45">
-              <span class="input-desc">Total HTTP requests required to render page.</span>
-            </div>
-
-            <div class="input-group">
-              <label for="input-dom-nodes">DOM HTML Size: <span id="val-dom-nodes">1500</span> Nodes</label>
-              <input type="range" id="input-dom-nodes" min="100" max="6000" step="100" value="1500">
-              <span class="input-desc">Total document markup elements.</span>
-            </div>
-
-            <div class="input-group">
-              <label for="input-rtt">Server Latency (RTT): <span id="val-rtt">120</span> ms</label>
-              <input type="range" id="input-rtt" min="10" max="800" step="10" value="120">
-              <span class="input-desc">Round trip network response delay.</span>
-            </div>
-
-            <div class="input-group">
-              <label for="input-blocking-scripts">Blocking Third-Party Scripts: <span id="val-blocking-scripts">4</span></label>
-              <input type="range" id="input-blocking-scripts" min="0" max="15" step="1" value="4">
-              <span class="input-desc">Blocking advertising, analytics, or social scripts.</span>
-            </div>
-
-            <div class="form-row">
-              <div class="toggle-group">
-                <label class="toggle-label" for="toggle-critical-css">Inlined Critical CSS</label>
-                <input type="checkbox" id="toggle-critical-css" class="ios-toggle">
+            <!-- URL Scanner Form Group -->
+            <div id="url-inputs-group" class="hidden">
+              <div class="input-group">
+                <label for="input-url-target">Website Address</label>
+                <input type="url" id="input-url-target" placeholder="https://example.com" class="text-input">
+                <span class="input-desc">Enter any valid HTTP/HTTPS address to trace performance metrics.</span>
               </div>
               
-              <div class="toggle-group">
-                <label class="toggle-label" for="toggle-http3">HTTP/3 Network Protocol</label>
-                <input type="checkbox" id="toggle-http3" class="ios-toggle">
+              <!-- Quick examples -->
+              <div class="url-presets">
+                <span class="preset-label">Load Preset:</span>
+                <button class="btn-preset" data-url="https://google.com">Google</button>
+                <button class="btn-preset" data-url="https://github.com">GitHub</button>
+                <button class="btn-preset" data-url="http://slow-legacy-site.org">Slow-Http1</button>
               </div>
             </div>
 

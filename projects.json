@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-11T06:35:35.226Z",
-  "count": 183,
+  "generatedAt": "2026-06-11T10:33:39.180Z",
+  "count": 189,
   "projects": [
     {
       "slug": "2048 Game",
@@ -661,6 +661,25 @@
       "addedAt": "2026-06-07T12:40:08.885Z"
     },
     {
+      "slug": "CPU Scheduling Simulator",
+      "title": "CPU Scheduling Simulator",
+      "description": "An ultra-premium, light botanical-themed interactive operating systems workspace simulating FCFS, SJF, Round Robin, and Priority CPU scheduling algorithms with real-time horizontal Gantt charts, deep waiting/turnaround analytics, and raw CSV metric data exporters.",
+      "author": {
+        "name": "Shruti Narsulwar",
+        "github": "shrutiii01"
+      },
+      "tags": [
+        "Operating-Systems",
+        "CPU-Scheduling",
+        "Simulation",
+        "Gantt-Chart"
+      ],
+      "entry": "Projects/CPU%20Scheduling%20Simulator/index.html",
+      "folder": "Projects/CPU%20Scheduling%20Simulator",
+      "thumbnail": null,
+      "addedAt": "2026-06-11T10:33:28.624Z"
+    },
+    {
       "slug": "Css Domino Builder",
       "title": "Css Domino Builder",
       "description": "An interactive, blueprint-styled architecture sandbox workspace built to run mechanical physics and multi-directional cascade simulations. Users instantiate custom domino configurations on an indexed matrix grid container specifying orientation and vectors. Triggering the chain activates an array-backed proximity crawler engine that calculates adjacent grid steps and schedules fluid, multi-directional kinetic animations via class injection loops and 3D hardware-accelerated CSS perspective matrices.",
@@ -833,6 +852,45 @@
       "folder": "Projects/Digital%20Vision%20Board",
       "thumbnail": null,
       "addedAt": "2026-06-08T10:49:22.035Z"
+    },
+    {
+      "slug": "Dijkstra Pathfinding Visualizer",
+      "title": "Dijkstra Pathfinding Visualizer",
+      "description": "An ultra-premium, light botanical-themed interactive graph pathfinding visualization platform modeling Dijkstra, A*, BFS, and DFS traversal routing mechanics with live click-and-draw wall grids, custom exploration step-clocks, real-time frontier expansion tracking animations, and raw CSV map data configuration exporters.",
+      "author": {
+        "name": "Shruti Narsulwar",
+        "github": "shrutiii01"
+      },
+      "tags": [
+        "Graph-Theory",
+        "Algorithms",
+        "Dijkstra-Shortest-Path",
+        "A-Star-Heuristic"
+      ],
+      "entry": "Projects/Dijkstra%20Pathfinding%20Visualizer/index.html",
+      "folder": "Projects/Dijkstra%20Pathfinding%20Visualizer",
+      "thumbnail": null,
+      "addedAt": "2026-06-11T10:33:28.627Z"
+    },
+    {
+      "slug": "Distance Estimation Challenge",
+      "title": "Distance Estimation Challenge",
+      "description": "A gamified app where users estimate distances between objects on screen, score points based on accuracy, and track progress with a leaderboard.",
+      "author": {
+        "name": "Muskan",
+        "github": "Muskankr"
+      },
+      "tags": [
+        "game",
+        "challenge",
+        "estimation",
+        "canvas",
+        "javascript"
+      ],
+      "entry": "Projects/Distance%20Estimation%20Challenge/index.html",
+      "folder": "Projects/Distance%20Estimation%20Challenge",
+      "thumbnail": null,
+      "addedAt": "2026-06-11T10:33:28.629Z"
     },
     {
       "slug": "Double Pendulum Chaos Simulator",
@@ -1872,6 +1930,25 @@
       "addedAt": "2026-06-04T09:00:07.145Z"
     },
     {
+      "slug": "Memory Management Simulator",
+      "title": "Memory Management Simulator",
+      "description": "An ultra-premium, light botanical-themed interactive memory allocation simulation workspace modeling First Fit, Best Fit, and Worst Fit RAM management mechanics with live address-mapped block visualizations, internal/external fragmentation tracking profiles, heap compactor engines, and raw CSV state exporters.",
+      "author": {
+        "name": "Shruti Narsulwar",
+        "github": "shrutiii01"
+      },
+      "tags": [
+        "Operating-Systems",
+        "Memory-Management",
+        "RAM-Allocation",
+        "Simulation"
+      ],
+      "entry": "Projects/Memory%20Management%20Simulator/index.html",
+      "folder": "Projects/Memory%20Management%20Simulator",
+      "thumbnail": null,
+      "addedAt": "2026-06-11T10:33:28.631Z"
+    },
+    {
       "slug": "Memory Sequence Game",
       "title": "Memory Sequence Game",
       "description": "A memory-based sequence game where players repeat increasing color patterns",
@@ -2092,6 +2169,26 @@
       "addedAt": "2026-06-04T09:00:07.148Z"
     },
     {
+      "slug": "Network Packet Routing Simulator",
+      "title": "Network Packet Routing Simulator",
+      "description": "An ultra-premium, light botanical-themed interactive network architecture simulation workspace modeling Dijkstra Link-State, Hop-Count, and Dynamic Traffic-Aware routing protocols with live draggable graph canvas maps, continuous packet transmission animations, microsecond delay tracking matrices, buffer queues, and raw CSV metric data exporters.",
+      "author": {
+        "name": "Shruti Narsulwar",
+        "github": "shrutiii01"
+      },
+      "tags": [
+        "Computer-Networks",
+        "Routing-Algorithms",
+        "Dijkstra-Shortest-Path",
+        "Packet-Switching",
+        "Simulation"
+      ],
+      "entry": "Projects/Network%20Packet%20Routing%20Simulator/index.html",
+      "folder": "Projects/Network%20Packet%20Routing%20Simulator",
+      "thumbnail": null,
+      "addedAt": "2026-06-11T10:33:28.634Z"
+    },
+    {
       "slug": "News Aggregator Interface",
       "title": "News Aggregator Interface",
       "description": "Browse categorized news cards, trending topics, search, and bookmarking.",
@@ -2229,6 +2326,25 @@
       "folder": "Projects/One%20Line%20Drawing%20Puzzle%20Game",
       "thumbnail": null,
       "addedAt": "2026-06-09T09:36:25.285Z"
+    },
+    {
+      "slug": "Page Replacement Simulator",
+      "title": "Page Replacement Simulator",
+      "description": "An ultra-premium, light botanical-themed interactive virtual memory allocation simulation workspace modeling FIFO, LRU, and Optimal page replacement mechanics with step-by-step state-trace timelines, continuous hit/fault performance logs, cache memory frame grids, and raw CSV diagnostic data exporters.",
+      "author": {
+        "name": "Shruti Narsulwar",
+        "github": "shrutiii01"
+      },
+      "tags": [
+        "Operating-Systems",
+        "Virtual-Memory",
+        "Page-Replacement",
+        "Simulation"
+      ],
+      "entry": "Projects/Page%20Replacement%20Simulator/index.html",
+      "folder": "Projects/Page%20Replacement%20Simulator",
+      "thumbnail": null,
+      "addedAt": "2026-06-11T10:33:28.636Z"
     },
     {
       "slug": "Password Generator",

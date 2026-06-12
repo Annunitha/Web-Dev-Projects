@@ -35,8 +35,8 @@
       ],
       "entry": "Projects/Age%20Calculator/index.html",
       "folder": "Projects/Age%20Calculator",
-      "thumbnail": null,
-      "addedAt": "2026-06-12T10:37:33.240Z"
+      "thumbnail":"Projects/Age Calculator/thumbnail.svg",
+      "addedAt": "2026-06-12T01:31:32.139Z"
     },
     {
       "slug": "Anti To Do List",
@@ -56,8 +56,8 @@
       ],
       "entry": "Projects/Anti%20To%20Do%20List/index.html",
       "folder": "Projects/Anti%20To%20Do%20List",
-      "thumbnail": null,
-      "addedAt": "2026-06-12T10:37:33.240Z"
+      "thumbnail":"Projects/Anti%20To%20Do%20List/thumbnail.svg",
+      "addedAt": "2026-06-12T01:31:32.140Z"
     },
     {
       "slug": "API Explorer Dashboard",

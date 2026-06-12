@@ -5,6 +5,7 @@
   "tags": ["HTML", "CSS", "JavaScript"],
   "author": {
     "name": "Shruti Narsulwar",
+    "thumbnail":"Projects/Age Calculator/thumbnail.svg",
     "github": "Shrutiii01"
   }
 }

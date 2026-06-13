@@ -1,0 +1,16 @@
+{
+  "name": "Product Comparison Dashboard",
+  "description": "A centralized platform to compare products side-by-side and make data-driven purchasing decisions.",
+  "author": "MistryVishwa",
+  "github": "MistryVishwa",
+  "tags": [
+    "enhancement",
+    "good first issue",
+    "javascript",
+    "frontend",
+    "ecommerce",
+    "dashboard",
+    "comparison-tool"
+  ],
+  "folder_name": "product-comparison-dashboard"
+}

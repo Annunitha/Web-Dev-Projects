@@ -1,0 +1,16 @@
+{
+  "name": "Subscription Management Dashboard",
+  "description": "Track, manage, and analyze all your recurring subscriptions and monthly expenses in one place.",
+  "author": "MistryVishwa",
+  "github": "MistryVishwa",
+  "tags": [
+    "enhancement",
+    "good first issue",
+    "javascript",
+    "frontend",
+    "finance",
+    "dashboard",
+    "subscription-management"
+  ],
+  "folder_name": "subscription-management-dashboard"
+}

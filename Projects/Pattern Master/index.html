@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot the Pattern — Neural Logic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <div id="game-overlay" class="overlay">
+            <h1 id="overlay-title">Pattern Master</h1>
+            <p id="overlay-desc" style="margin: 15px 0 30px; opacity: 0.7;">Find the rule. Solve the sequence.</p>
+            <button class="btn-start" onclick="initGame()">Start Game</button>
+        </div>
+
+        <div class="glass-panel">
+            <div class="header">
+                <h1>SPOT THE PATTERN</h1>
+                <div class="score-box">
+                    <span>LEVEL <span id="level-num">1</span></span>
+                    <span>SCORE: <span id="score-num">0</span></span>
+                </div>
+            </div>
+
+            <div class="sequence-container" id="seq-box"></div>
+            <div class="options-grid" id="opt-box"></div>
+            <div id="rule-explain" class="explanation"></div>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>

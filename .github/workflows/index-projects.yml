@@ -8,10 +8,6 @@ on:
       - ".github/scripts/generate-index.mjs"
       - ".github/workflows/index-projects.yml"
       - "gen-svgs.js"
-  pull_request:
-    paths:
-      - "Projects/**"
-      - ".github/scripts/generate-index.mjs"
   workflow_dispatch:
 
 permissions:
@@ -39,13 +35,10 @@ jobs:
 
       - name: Generate / update thumbnails
         env:
-          # Use the pre-installed system Chrome — no apt-get or download needed
           PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
         run: node gen-svgs.js
 
-      # ── Commit (main branch only) ─────────────────────────────────
       - name: Commit index + thumbnails
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -54,5 +47,5 @@ jobs:
             git commit -m "chore: rebuild index + thumbnails [skip ci]"
             git push
           else
-            echo "✅ Nothing to commit — index and thumbnails are up to date."
+            echo "Nothing to commit — index and thumbnails are already up to date."
           fi

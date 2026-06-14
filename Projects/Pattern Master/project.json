@@ -1,0 +1,16 @@
+{
+  "title": "Pattern Master",
+  "description": "A fast-paced game to test your pattern recognition skills.",
+  "author": {
+    "name": "Priya Kalamkar",
+    "github": "priyakalamkar555-art"
+  },
+  "tags": [
+    "pattern-master game",
+    "pattern-recognition-game",
+    "interactive-game",
+    "vanilla-js"
+  ],
+  "entry": "index.html",
+  "thumbnail": null
+}

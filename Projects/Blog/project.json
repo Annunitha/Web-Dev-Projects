@@ -1,0 +1,14 @@
+{
+  "title": "Blog",
+  "description": "A clean, minimal static blog platform built with HTML, CSS, and JavaScript. Features dark/light theme, responsive post grid, modal post viewer, tag filtering, and local theme persistence. No build step required.",
+  "entry": "index.html",
+  "tags": [
+    "blog",
+    "responsive",
+    "dark-mode"
+  ],
+  "author": {
+    "name": "Aashutosh Rana",
+    "github": "Aashutosh24"
+  }
+}

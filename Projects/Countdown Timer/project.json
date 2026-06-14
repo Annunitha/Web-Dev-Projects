@@ -1,0 +1,11 @@
+{
+  "title": "Countdown Timer",
+  "description": "A customizable countdown timer with alarm sound, pause/resume controls, and a visual circular progress ring built using HTML, CSS, and JavaScript.",
+  "author": {
+    "name": "Muskan",
+    "github": "Muskankr"
+  },
+  "tags": ["timer", "countdown", "utility", "animation", "vanilla-js"],
+  "entry": "index.html",
+  "thumbnail": "thumbnail.svg"
+}

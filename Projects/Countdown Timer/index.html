@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <h1>⏳ Countdown Timer</h1>
+
+    <div class="inputs">
+      <input type="number" id="minutes" placeholder="Minutes" min="0">
+      <input type="number" id="seconds" placeholder="Seconds" min="0" max="59">
+      <button onclick="startTimer()">▶️ Start</button>
+      <button onclick="pauseTimer()">⏸️ Pause</button>
+      <button onclick="resetTimer()">🔄 Reset</button>
+    </div>
+
+    <div class="progress-ring">
+      <svg width="200" height="200">
+        <circle class="ring-bg" cx="100" cy="100" r="90"></circle>
+        <circle class="ring-progress" cx="100" cy="100" r="90"></circle>
+      </svg>
+      <div id="display">00:00</div>
+    </div>
+
+    <audio id="alarm" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

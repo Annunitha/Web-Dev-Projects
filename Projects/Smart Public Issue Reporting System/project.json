@@ -1,18 +1,17 @@
 {
   "title": "Smart Public Issue Reporting System",
-  "description": "Create a responsive Smart Public Issue Reporting System that allows users to report infrastructure and public service issues within their locality.",
+  "description": "Create a responsive Smart Public Issue Reporting System that allows users to report infrastructur...",
   "author": {
     "name": "MistryVishwa",
     "github": "MistryVishwa"
   },
   "tags": [
     "enhancement",
-    "good first issue",
+    "good-first-issue",
     "javascript",
     "frontend",
     "civic-tech",
-    "dashboard",
-    "community"
+    "dashboard"
   ],
   "entry": "index.html"
 }

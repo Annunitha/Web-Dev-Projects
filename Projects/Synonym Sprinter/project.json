@@ -1,0 +1,16 @@
+{
+  "title": "Synonym Sprinter",
+  "description": "A fast-paced game to test your synonym knowledge.",
+  "author": {
+    "name": "Priya Kalamkar",
+    "github": "priyakalamkar555-art"
+  },
+  "tags": [
+    "synonym-game",
+    "sprint-game",
+    "interactive-game",
+    "vanilla-js"
+  ],
+  "entry": "index.html",
+  "thumbnail": null
+}

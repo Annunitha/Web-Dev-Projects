@@ -6,13 +6,12 @@
     "github": "MistryVishwa"
   },
   "tags": [
-    "enhancement",
-    "good first issue",
-    "javascript",
-    "frontend",
     "healthcare",
     "medication-tracker",
-    "productivity"
+    "javascript",
+    "frontend",
+    "productivity",
+    "interactive"
   ],
   "entry": "index.html"
 }

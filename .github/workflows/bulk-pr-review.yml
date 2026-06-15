@@ -55,9 +55,14 @@ jobs:
 
               try {
                 // Check if already processed (has level3 label)
-                const alreadyPassed = pr.labels.some(l => l.name === 'level3');
-                if (alreadyPassed) {
-                  core.info(`PR #${prNum} already has 'level3' label — skipping.`);
+                const { data: currentPR } = await github.rest.pulls.get({
+                  owner,
+                  repo,
+                  pull_number: prNum,
+                });
+                
+                if (currentPR.merged) {
+                  core.info(`PR #${prNum} already merged.`);
                   continue;
                 }
 

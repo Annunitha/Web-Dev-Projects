@@ -24,7 +24,7 @@ jobs:
       - name: Process all open PRs
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.MERGE_PAT }}
           script: |
             const { owner, repo } = context.repo;
             const DRY_RUN = '${{ github.event.inputs.dry_run }}' === 'true';
